@@ -1,0 +1,734 @@
+[
+  {
+    "moduleName": "Styles.Breakpoints",
+    "range": {
+      "start": {
+        "row": 20,
+        "column": 9
+      },
+      "end": {
+        "row": 20,
+        "column": 64
+      }
+    },
+    "sourceCode": "[ Css.Media.all [ Css.Media.maxWidth (Css.px width) ] ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Styles.Animations",
+    "range": {
+      "start": {
+        "row": 49,
+        "column": 13
+      },
+      "end": {
+        "row": 49,
+        "column": 52
+      }
+    },
+    "sourceCode": "[ Css.Animations.opacity <| Css.num 1 ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Styles.Animations",
+    "range": {
+      "start": {
+        "row": 46,
+        "column": 13
+      },
+      "end": {
+        "row": 46,
+        "column": 52
+      }
+    },
+    "sourceCode": "[ Css.Animations.opacity <| Css.num 0 ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Styles.Animations",
+    "range": {
+      "start": {
+        "row": 35,
+        "column": 13
+      },
+      "end": {
+        "row": 37,
+        "column": 14
+      }
+    },
+    "sourceCode": "[ Css.Animations.transform [ Css.scale 1 ]\n            , Css.Animations.opacity <| Css.num 1\n            ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Styles.Animations",
+    "range": {
+      "start": {
+        "row": 30,
+        "column": 13
+      },
+      "end": {
+        "row": 32,
+        "column": 14
+      }
+    },
+    "sourceCode": "[ Css.Animations.transform [ Css.scale 0.5 ]\n            , Css.Animations.opacity <| Css.num 0\n            ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Styles.Animations",
+    "range": {
+      "start": {
+        "row": 21,
+        "column": 9
+      },
+      "end": {
+        "row": 23,
+        "column": 10
+      }
+    },
+    "sourceCode": "[ Css.animationName fadeIn\n        , Css.animationDuration <| Css.ms 300\n        ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Styles.Animations",
+    "range": {
+      "start": {
+        "row": 13,
+        "column": 9
+      },
+      "end": {
+        "row": 15,
+        "column": 10
+      }
+    },
+    "sourceCode": "[ Css.animationName scaleIn\n        , Css.animationDuration <| Css.ms 300\n        ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Styles",
+    "range": {
+      "start": {
+        "row": 336,
+        "column": 5
+      },
+      "end": {
+        "row": 336,
+        "column": 30
+      }
+    },
+    "sourceCode": "[ Css.flex <| Css.int 1 ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Styles",
+    "range": {
+      "start": {
+        "row": 318,
+        "column": 5
+      },
+      "end": {
+        "row": 331,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.fontSize Css.smaller\n    , Css.height <| Css.rem 5\n    , Css.flexShrink <| Css.int 0\n    , Css.displayFlex\n    , Css.alignItems Css.center\n    , Css.Global.descendants\n        [ Css.Global.selector \".container\"\n            [ Css.textAlign Css.center\n            , Css.displayFlex\n            , Css.alignItems Css.center\n            , Css.justifyContent Css.center\n            ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Styles",
+    "range": {
+      "start": {
+        "row": 265,
+        "column": 5
+      },
+      "end": {
+        "row": 313,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.displayFlex\n    , Css.flexGrow <| Css.int 1\n    , Css.Global.descendants\n        [ Css.Global.selector \".container\"\n            [ Css.displayFlex ]\n        , Css.Global.selector \".inner\"\n            [ Css.flexDirection Css.column\n            , Css.paddingTop <| Css.rem 2\n            , Css.flex <| Css.int 1\n            ]\n        , Css.Global.selector \".header\"\n            [ Css.marginBottom <| Css.rem 3\n            , Css.color Colors.black\n            , Css.displayFlex\n            , Css.alignItems Css.center\n            , Css.justifyContent Css.spaceBetween\n            , Breakpoints.small\n                [ Css.display Css.block ]\n            ]\n        , Css.Global.selector \".header svg\"\n            [ Css.marginLeft <| Css.rem 0.3 ]\n        , Css.Global.selector \".content\"\n            [ Css.displayFlex\n            , Css.justifyContent Css.center\n            ]\n        , Css.Global.selector \".content__example\"\n            [ Css.displayFlex\n            , Css.justifyContent Css.center\n            , Css.width <| Css.pct 100\n            , Css.border3 (Css.px 1) Css.solid Colors.grey\n            , Css.borderRadius <| Css.px 4\n            , Css.boxShadow5 Css.zero (Css.px 25) (Css.px 50) (Css.px -12) Colors.grey\n            , Css.overflow Css.hidden\n            , Animations.scale\n            ]\n        , Css.Global.selector \".code\"\n            [ Css.marginTop <| Css.rem 3\n            , Css.overflow Css.auto\n            , Css.borderRadius <| Css.px 4\n            , Css.fontFamilies [ \"monospace\" ]\n            ]\n        , Css.Global.selector \"c-highlight\"\n            [ Css.width <| Css.pct 100\n            , Css.overflow Css.auto\n            ]\n        , Css.Global.selector \"pre\"\n            [ Css.margin Css.zero ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Styles",
+    "range": {
+      "start": {
+        "row": 170,
+        "column": 5
+      },
+      "end": {
+        "row": 260,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.displayFlex\n    , Css.width <| Css.px 300\n    , Css.flexDirection Css.column\n    , Css.paddingRight <| Css.rem 2\n    , Css.Global.descendants\n        [ Css.Global.selector \".inner\"\n            [ Css.justifyContent Css.spaceBetween\n            , Css.flexDirection Css.column\n            , Css.displayFlex\n            ]\n        , Css.Global.selector \".main-nav\"\n            [ Css.marginTop <| Css.rem 1\n            , Css.fontSize <| Css.rem 0.9\n            , Css.position Css.sticky\n            , Css.top Css.zero\n            , Css.property \"height\" \"calc(100vh - 70px)\"\n            , Css.overflowY Css.auto\n            , Css.padding4 (Css.rem 1) (Css.rem 3) (Css.rem 2) Css.zero\n            , Css.Global.descendants\n                [ Css.Global.selector \".main-nav__section\"\n                    [ Css.marginBottom <| Css.rem 1 ]\n                , Css.Global.selector \".main-nav__header\"\n                    [ Css.Global.descendants\n                        [ Css.Global.selector \"a\"\n                            [ Css.textTransform Css.uppercase\n                            , Css.color Colors.blueDark\n                            , Css.fontSize <| Css.rem 0.8\n                            , Css.fontWeight Css.bolder\n                            ]\n                        ]\n                    ]\n                , Css.Global.selector \"a\"\n                    [ Css.textDecoration Css.none\n                    , Css.color Colors.blackLightest\n                    , Css.display Css.block\n                    , Css.padding (Css.rem 0.3)\n                    , Css.Global.withClass \"active\"\n                        [ Css.color Colors.blueDarker\n                        , Css.backgroundColor Colors.blueLighter\n                        , Css.borderRadius <| Css.px 2\n                        ]\n                    , Css.hover\n                        [ Css.color Colors.blueDarker ]\n                    ]\n                , Css.Global.selector \".close\"\n                    [ Css.display Css.none\n                    , Css.position Css.fixed\n                    , Css.zIndex <| Css.int 99999\n                    , Css.top <| Css.rem 1.5\n                    , Css.right <| Css.rem 0.8\n                    , Css.color Colors.blueDarker\n                    ]\n                ]\n            , Breakpoints.small\n                [ Css.position Css.relative\n                , Css.top Css.zero\n                , Css.height Css.auto\n                , Css.overflowY Css.visible\n                , Css.Global.descendants\n                    [ Css.Global.selector \".close\"\n                        [ Css.important <| Css.display Css.block\n                        ]\n                    ]\n                ]\n            ]\n        ]\n    , Breakpoints.small\n        [ Css.display Css.none\n        , Css.Global.withClass \"show\"\n            [ Css.displayFlex\n            , Css.position Css.fixed\n            , Css.top Css.zero\n            , Css.left Css.zero\n            , Css.bottom Css.zero\n            , Css.width <| Css.pct 100\n            , Css.backgroundColor Colors.white\n            , Css.padding <| Css.rem 1\n            , Css.zIndex <| Css.int 999\n            , Css.overflowY Css.auto\n            , Animations.fade\n            ]\n        , Css.Global.descendants\n            [ Css.Global.selector \".main-nav\"\n                [ Css.important <| Css.marginTop Css.zero\n                , Css.important <| Css.paddingRight Css.zero\n                ]\n            , Css.Global.selector \"svg\"\n                [ Css.fontSize <| Css.rem 1.2 ]\n            ]\n        ]\n    ]",
+    "nonCssRanges": [
+      {
+        "start": {
+          "row": 236,
+          "column": 7
+        },
+        "end": {
+          "row": 259,
+          "column": 10
+        }
+      }
+    ],
+    "nonCssRelativeRanges": [
+      {
+        "start": {
+          "row": 66,
+          "column": 7
+        },
+        "end": {
+          "row": 89,
+          "column": 10
+        }
+      }
+    ]
+  },
+  {
+    "moduleName": "Styles",
+    "range": {
+      "start": {
+        "row": 132,
+        "column": 5
+      },
+      "end": {
+        "row": 165,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.height <| Css.rem 5\n    , Css.displayFlex\n    , Css.backgroundColor Colors.white\n    , Css.alignItems Css.center\n    , Css.borderBottom3 (Css.px 1) Css.solid Colors.greyLighter\n    , Css.flexShrink <| Css.int 0\n    , Css.zIndex <| Css.int 999\n    , Css.Global.descendants\n        [ Css.Global.selector \".logo\"\n            [ Css.textDecoration Css.none\n            , Css.color Colors.blueDarker\n            , Css.fontWeight Css.bolder\n            , Css.textTransform Css.lowercase\n            , Css.fontSize <| Css.rem 1.1\n            ]\n        , Css.Global.selector \".container\"\n            [ Css.displayFlex\n            , Css.justifyContent Css.spaceBetween\n            ]\n        , Css.Global.selector \".burger\"\n            [ Css.display Css.none\n            , Css.color Colors.blueDarker\n            , Breakpoints.small\n                [ Css.display Css.inlineBlock\n                , Css.marginLeft <| Css.rem 0.3\n                , Css.cursor Css.pointer\n                ]\n            ]\n        ]\n    , Breakpoints.small\n        [ Css.position Css.sticky\n        , Css.top Css.zero\n        ]\n    ]",
+    "nonCssRanges": [
+      {
+        "start": {
+          "row": 161,
+          "column": 7
+        },
+        "end": {
+          "row": 164,
+          "column": 10
+        }
+      }
+    ],
+    "nonCssRelativeRanges": [
+      {
+        "start": {
+          "row": 29,
+          "column": 7
+        },
+        "end": {
+          "row": 32,
+          "column": 10
+        }
+      }
+    ]
+  },
+  {
+    "moduleName": "Styles",
+    "range": {
+      "start": {
+        "row": 121,
+        "column": 5
+      },
+      "end": {
+        "row": 127,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.height <| Css.vh 100\n    , Css.overflow Css.hidden\n    , Css.Global.descendants\n        [ Css.Global.selector \".main-content__sidebar\"\n            [ Css.display Css.none ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Styles",
+    "range": {
+      "start": {
+        "row": 70,
+        "column": 5
+      },
+      "end": {
+        "row": 116,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.Global.descendants\n        [ Css.Global.selector \".top-header\"\n            [ Animations.scale\n            , Css.marginBottom <| Css.rem 5\n            , Css.textAlign Css.center\n            , Css.padding2 (Css.rem 5) Css.zero\n            , Breakpoints.small\n                [ Css.padding Css.zero ]\n            ]\n        , Css.Global.selector \".main-content__sidebar\"\n            [ Css.display Css.none ]\n        , Css.Global.selector \"h1\"\n            [ Css.fontSize <| Css.rem 3.4\n            , Css.marginBottom <| Css.em 1\n            , Breakpoints.small\n                [ Css.fontSize <| Css.rem 2.6 ]\n            ]\n        , Css.Global.selector \".hero\"\n            [ Css.fontSize <| Css.rem 1.8\n            , Breakpoints.small\n                [ Css.fontSize <| Css.rem 1.4 ]\n            ]\n        , Css.Global.selector \".patterns\"\n            [ Css.displayFlex\n            , Css.width <| Css.pct 85\n            , Css.margin2 Css.zero Css.auto\n            , Css.justifyContent Css.spaceBetween\n            , Css.alignItems Css.flexStart\n            , Css.Global.descendants\n                [ Css.Global.selector \".patterns__section\"\n                    [ Css.flex <| Css.int 1 ]\n                , Css.Global.selector \".patterns__header\"\n                    [ Css.marginBottom <| Css.rem 1 ]\n                ]\n            , Breakpoints.small\n                [ Css.width <| Css.pct 100\n                , Css.display Css.block\n                , Css.Global.descendants\n                    [ Css.Global.selector \".patterns__section\"\n                        [ Css.marginBottom <| Css.rem 2\n                        , Css.textAlign Css.center\n                        ]\n                    ]\n                ]\n            ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Styles",
+    "range": {
+      "start": {
+        "row": 12,
+        "column": 5
+      },
+      "end": {
+        "row": 65,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.fontFamilies [ \"Work Sans\", \"sans-serif\" ]\n    , Css.margin2 Css.zero Css.auto\n    , Css.color Colors.blackLightest\n    , Css.displayFlex\n    , Css.flexDirection Css.column\n    , Css.minHeight <| Css.vh 100\n    , Css.Global.withClass \"main-top\" mainTop\n    , Css.Global.withClass \"show-sidebar\" showSidebar\n    , Css.Global.descendants\n        [ Css.Global.selector \".main-content__sidebar\" mainContentSidebar\n        , Css.Global.selector \".main-content__body\" mainContentBody\n        , Css.Global.selector \".main-content__nav\" mainContentNav\n        , Css.Global.selector \".main-content__footer\" mainContentFooter\n        , Css.Global.selector \".inner\" inner\n        , Css.Global.selector \".container\"\n            [ Css.width <| Css.px 1024\n            , Css.padding2 Css.zero (Css.rem 1)\n            , Css.margin2 Css.zero Css.auto\n            , Css.displayFlex\n            ]\n        , Css.Global.selector \"a\"\n            [ Css.textDecoration Css.none\n            , Css.color Colors.blueDarker\n            , Css.Global.withClass \"cool\"\n                [ Css.position Css.relative\n                , Css.fontWeight <| Css.int 500\n                , Css.after\n                    [ Css.property \"content\" \"\\\" \\\"\"\n                    , Css.backgroundColor Colors.blueLighter\n                    , Css.position Css.absolute\n                    , Css.left <| Css.em 0.6\n                    , Css.bottom <| Css.em -0.1\n                    , Css.zIndex <| Css.int -1\n                    , Css.property \"width\" \"calc(100% - .4em)\"\n                    , Css.property \"height\" \"calc(100% - .6em)\"\n                    , Css.property \"transition\" \"0.35s cubic-bezier(0.25, 0.1, 0, 2.05)\"\n                    ]\n                , Css.hover\n                    [ Css.after\n                        [ Css.left Css.zero\n                        , Css.bottom <| Css.px -2\n                        , Css.width <| Css.pct 100\n                        , Css.height <| Css.pct 100\n                        ]\n                    ]\n                ]\n            ]\n        , Css.Global.selector \"h1\"\n            [ Css.fontSize <| Css.rem 1.9\n            , Css.fontWeight <| Css.int 700\n            , Css.color Colors.black\n            ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Navigation.Tab",
+    "range": {
+      "start": {
+        "row": 97,
+        "column": 5
+      },
+      "end": {
+        "row": 124,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.width <| Css.pct 100\n    , Css.height <| Css.px 400\n    , Css.displayFlex\n    , Css.alignItems Css.center\n    , Css.justifyContent Css.center\n    , Css.Global.descendants\n        [ Css.Global.selector \".tabs\"\n            [ Css.displayFlex\n            , Css.alignItems Css.center\n            , Css.justifyContent Css.center\n            ]\n        , Css.Global.selector \".tabs__item\"\n            [ Css.borderBottom3 (Css.px 1) Css.solid Colors.grey\n            , Css.padding <| Css.rem 1\n            , Css.width <| Css.rem 10\n            , Css.cursor Css.pointer\n            , Breakpoints.small\n                [ Css.width <| Css.rem 6 ]\n            ]\n        , Css.Global.selector \".tabs__item--active\"\n            [ Css.border3 (Css.px 1) Css.solid Colors.grey\n            , Css.borderBottomColor Css.transparent\n            , Css.borderTopLeftRadius <| Css.px 2\n            , Css.borderTopRightRadius <| Css.px 2\n            , Css.cursor Css.default\n            ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Navigation.Split",
+    "range": {
+      "start": {
+        "row": 65,
+        "column": 5
+      },
+      "end": {
+        "row": 95,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.width <| Css.pct 100\n    , Css.height <| Css.px 400\n    , Css.displayFlex\n    , Css.alignItems Css.center\n    , Css.justifyContent Css.center\n    , Css.Global.descendants\n        [ Css.Global.selector \".navigation\"\n            [ Css.displayFlex\n            , Css.alignItems Css.center\n            , Css.listStyle Css.none\n            , Css.margin Css.zero\n            , Css.border3 (Css.px 1) Css.solid Colors.grey\n            , Css.borderRadius <| Css.px 4\n            , Css.width <| Css.pct 80\n            , Css.Global.descendants\n                [ Css.Global.selector \".navigation__item\"\n                    [ Css.padding <| Css.rem 0.7\n                    , Css.lastOfType\n                        [ Css.marginLeft Css.auto ]\n                    , Breakpoints.small\n                        [ Css.padding <| Css.rem 0.3 ]\n                    ]\n                , Css.Global.selector \".placeholder-rectangle\"\n                    [ Css.width <| Css.rem 5\n                    , Breakpoints.small\n                        [ Css.width <| Css.rem 3 ]\n                    ]\n                ]\n            ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Navigation.Pagination",
+    "range": {
+      "start": {
+        "row": 80,
+        "column": 5
+      },
+      "end": {
+        "row": 107,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.width <| Css.pct 100\n    , Css.height <| Css.px 400\n    , Css.displayFlex\n    , Css.alignItems Css.center\n    , Css.justifyContent Css.center\n    , Css.Global.descendants\n        [ Css.Global.selector \".pagination\"\n            [ Css.displayFlex\n            , Css.alignItems Css.center\n            , Css.justifyContent Css.center\n            , Css.border3 (Css.px 1) Css.solid Colors.grey\n            , Css.borderRadius <| Css.px 4\n            , Css.Global.descendants\n                [ Css.Global.selector \".pagination__item\"\n                    [ Css.displayFlex\n                    , Css.alignItems Css.center\n                    , Css.justifyContent Css.center\n                    , Css.borderRight3 (Css.px 1) Css.solid Colors.grey\n                    , Css.padding <| Css.rem 0.5\n                    , Css.lastOfType\n                        [ Css.borderRight <| Css.px 0 ]\n                    ]\n                , Css.Global.selector \".placeholder-rectangle\"\n                    [ Css.width <| Css.rem 5 ]\n                ]\n            ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Navigation.Drawer",
+    "range": {
+      "start": {
+        "row": 56,
+        "column": 5
+      },
+      "end": {
+        "row": 87,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.width <| Css.pct 100\n    , Css.height <| Css.px 400\n    , Css.position Css.relative\n    , Css.Global.descendants\n        [ Css.Global.selector \".drawer__overlay\"\n            [ Css.height <| Css.pct 100\n            , Css.position Css.absolute\n            , Css.left Css.zero\n            , Css.top Css.zero\n            , Css.backgroundColor Colors.black\n            , Css.opacity <| Css.num 0.8\n            , Css.width <| Css.pct 100\n            ]\n        , Css.Global.selector \".drawer__content\"\n            [ Css.height <| Css.pct 100\n            , Css.position Css.absolute\n            , Css.backgroundColor Colors.white\n            , Css.left Css.zero\n            , Css.top Css.zero\n            , Css.padding <| Css.rem 1\n            , Css.Global.descendants\n                [ Css.Global.selector \".placeholder-block\"\n                    [ Css.marginBottom <| Css.rem 1\n                    , Breakpoints.small\n                        [ Css.marginBottom <| Css.rem 0.5 ]\n                    ]\n                ]\n            , Breakpoints.small\n                [ Css.width <| Css.pct 25 ]\n            ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Navigation.Breadcrumb",
+    "range": {
+      "start": {
+        "row": 61,
+        "column": 5
+      },
+      "end": {
+        "row": 84,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.width <| Css.pct 100\n    , Css.height <| Css.px 400\n    , Css.displayFlex\n    , Css.alignItems Css.center\n    , Css.justifyContent Css.center\n    , Css.Global.descendants\n        [ Css.Global.selector \".breadcrumb\"\n            [ Css.displayFlex\n            , Css.alignItems Css.center\n            , Css.justifyContent Css.center\n            ]\n        , Css.Global.selector \".breadcrumb__item\"\n            [ Css.displayFlex\n            , Css.alignItems Css.center\n            , Css.minWidth <| Css.rem 6\n            ]\n        , Css.Global.selector \".breadcrumb__item:not(:last-of-type)\"\n            [ Css.after\n                [ Css.property \"content\" \"\\\"/\\\"\"\n                , Css.margin2 Css.zero (Css.em 0.5)\n                ]\n            ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Misc.Timeline",
+    "range": {
+      "start": {
+        "row": 112,
+        "column": 5
+      },
+      "end": {
+        "row": 146,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.displayFlex\n    , Css.flexDirection Css.column\n    , Css.alignItems Css.center\n    , Css.justifyContent Css.center\n    , Css.width <| Css.pct 100\n    , Css.height <| Css.px 400\n    , Css.Global.descendants\n        [ Css.Global.selector \".timeline\"\n            [ Css.position Css.relative\n            , Css.width <| Css.pct 60\n            ]\n        , Css.Global.selector \".timeline__vertical-line\"\n            [ Css.borderRight3 (Css.px 2) Css.solid Colors.grey\n            , Css.position Css.absolute\n            , Css.top Css.zero\n            , Css.left <| Css.px 16\n            , Css.height <| Css.pct 100\n            ]\n        , Css.Global.selector \".timeline__item:not(:last-of-type)\"\n            [ Css.marginBottom <| Css.rem 1 ]\n        , Css.Global.selector \".timeline__header\"\n            [ Css.displayFlex\n            , Css.alignItems Css.center\n            , Css.marginBottom <| Css.rem 0.5\n            , Css.Global.children\n                [ Css.Global.selector \".placeholder-rectangle\"\n                    [ Css.marginLeft <| Css.px 16\n                    , Css.flex <| Css.int 1\n                    ]\n                ]\n            ]\n        , Css.Global.selector \".timeline__content\"\n            [ Css.marginLeft <| Css.px 48 ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Misc.StickyHeadersTable",
+    "range": {
+      "start": {
+        "row": 97,
+        "column": 5
+      },
+      "end": {
+        "row": 127,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.displayFlex\n    , Css.flexDirection Css.column\n    , Css.alignItems Css.center\n    , Css.justifyContent Css.center\n    , Css.width <| Css.pct 100\n    , Css.height <| Css.px 400\n    , Css.Global.descendants\n        [ Css.Global.selector \".sticky-headers-table\"\n            [ Css.width <| Css.pct 80\n            , Css.height <| Css.pct 80\n            , Css.border3 (Css.px 1) Css.solid Colors.greyLight\n            , Css.overflow Css.auto\n            ]\n        , Css.Global.selector \".sticky-headers-table__table\"\n            [ Css.position Css.relative\n            , Css.width <| Css.pct 100\n            , Css.borderCollapse Css.collapse\n            ]\n        , Css.Global.selector \".sticky-headers-table__th\"\n            [ Css.padding <| Css.rem 1\n            , Css.backgroundColor Colors.greyLighter\n            , Css.position Css.sticky\n            , Css.top Css.zero\n            , Css.zIndex <| Css.int 9999\n            ]\n        , Css.Global.selector \".sticky-headers-table__td\"\n            [ Css.padding <| Css.rem 1\n            , Css.borderTop3 (Css.px 1) Css.solid Colors.greyLight\n            ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Misc.StickyColumnsTable",
+    "range": {
+      "start": {
+        "row": 92,
+        "column": 5
+      },
+      "end": {
+        "row": 126,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.displayFlex\n    , Css.flexDirection Css.column\n    , Css.alignItems Css.center\n    , Css.justifyContent Css.center\n    , Css.width <| Css.pct 100\n    , Css.height <| Css.px 400\n    , Css.Global.descendants\n        [ Css.Global.selector \".sticky-columns-table\"\n            [ Css.width <| Css.px 550\n            , Css.border3 (Css.px 1) Css.solid Colors.greyLight\n            , Css.overflow Css.scroll\n            , Css.position Css.relative\n            , Breakpoints.small\n                [ Css.width <| Css.px 250 ]\n            ]\n        , Css.Global.selector \".sticky-columns-table__table\"\n            [ Css.borderCollapse Css.collapse\n            , Css.width <| Css.pct 100\n            ]\n        , Css.Global.selector \".sticky-columns-table__th\"\n            [ Css.padding <| Css.rem 1\n            , Css.backgroundColor Colors.greyLighter\n            , Css.position Css.sticky\n            , Css.left Css.zero\n            , Css.zIndex <| Css.int 9999\n            ]\n        , Css.Global.selector \".sticky-columns-table__td\"\n            [ Css.padding <| Css.rem 1 ]\n        , Css.Global.selector \".placeholder-rectangle\"\n            [ Css.width <| Css.px 150\n            , Breakpoints.small\n                [ Css.width <| Css.px 50 ]\n            ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Layout.StickyHeader",
+    "range": {
+      "start": {
+        "row": 63,
+        "column": 5
+      },
+      "end": {
+        "row": 84,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.displayFlex\n    , Css.flexDirection Css.column\n    , Css.width <| Css.pct 100\n    , Css.height <| Css.px 400\n    , Css.Global.descendants\n        [ Css.Global.selector \"> header\"\n            [ Css.displayFlex\n            , Css.alignItems Css.center\n            , Css.padding <| Css.rem 1\n            , Css.borderBottom3 (Css.px 1) Css.solid Colors.greyLighter\n            ]\n        , Css.Global.selector \"main\"\n            [ Css.width <| Css.pct 100\n            , Css.padding <| Css.rem 1\n            , Css.overflow Css.auto\n            , Css.Global.descendants\n                [ Css.Global.selector \"> div\"\n                    [ Css.marginBottom <| Css.rem 1 ]\n                ]\n            ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Layout.StickyFooter",
+    "range": {
+      "start": {
+        "row": 65,
+        "column": 5
+      },
+      "end": {
+        "row": 95,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.displayFlex\n    , Css.flexDirection Css.column\n    , Css.width <| Css.pct 100\n    , Css.height <| Css.px 400\n    , Css.Global.descendants\n        [ Css.Global.selector \"> header\"\n            [ Css.displayFlex\n            , Css.flexShrink <| Css.int 0\n            , Css.alignItems Css.center\n            , Css.padding <| Css.rem 1\n            , Css.borderBottom3 (Css.px 1) Css.solid Colors.greyLighter\n            ]\n        , Css.Global.selector \"main\"\n            [ Css.width <| Css.pct 100\n            , Css.padding <| Css.rem 1\n            , Css.overflow Css.auto\n            , Css.flexGrow <| Css.int 1\n            , Css.Global.descendants\n                [ Css.Global.selector \"> div\"\n                    [ Css.marginBottom <| Css.rem 1 ]\n                ]\n            ]\n        , Css.Global.selector \"> footer\"\n            [ Css.displayFlex\n            , Css.flexShrink <| Css.int 0\n            , Css.alignItems Css.center\n            , Css.padding <| Css.rem 1\n            , Css.borderTop3 (Css.px 1) Css.solid Colors.greyLighter\n            ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Layout.SplitScreen",
+    "range": {
+      "start": {
+        "row": 77,
+        "column": 5
+      },
+      "end": {
+        "row": 107,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.displayFlex\n    , Css.width <| Css.pct 100\n    , Css.height <| Css.px 400\n    , Css.Global.descendants\n        [ Css.Global.selector \"> div\"\n            [ Css.flex <| Css.int 1\n            , Css.displayFlex\n            , Css.flexDirection Css.column\n            , Css.alignItems Css.center\n            , Css.justifyContent Css.center\n            , Css.padding <| Css.rem 1\n            , Css.firstOfType\n                [ Css.borderRight3 (Css.px 1) Css.solid Colors.greyLighter\n                ]\n            ]\n        , Css.Global.selector \".inner-wrapper\"\n            [ Css.width <| Css.pct 100\n            , Css.Global.descendants\n                [ Css.Global.selector \"> div\"\n                    [ Css.marginBottom <| Css.rem 1 ]\n                ]\n            ]\n        , Css.Global.selector \".inner-wrapper--center\"\n            [ Css.displayFlex\n            , Css.alignItems Css.center\n            , Css.flexDirection Css.column\n            ]\n        , Css.Global.selector \".placeholder-rectangle\"\n            [ Css.marginBottom <| Css.em 1 ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Layout.Sidebar",
+    "range": {
+      "start": {
+        "row": 71,
+        "column": 5
+      },
+      "end": {
+        "row": 93,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.displayFlex\n    , Css.width <| Css.pct 100\n    , Css.height <| Css.px 400\n    , Css.Global.descendants\n        [ Css.Global.selector \"aside\"\n            [ Css.width <| Css.pct 30\n            , Css.padding <| Css.rem 1\n            , Css.borderRight3 (Css.px 1) Css.solid Colors.greyLighter\n            , Css.displayFlex\n            , Css.flexDirection Css.column\n            , Css.justifyContent Css.spaceBetween\n            ]\n        , Css.Global.selector \"main\"\n            [ Css.flex <| Css.int 1\n            , Css.overflow Css.auto\n            , Css.padding <| Css.rem 1\n            , Css.Global.descendants\n                [ Css.Global.selector \"> div\"\n                    [ Css.marginBottom <| Css.rem 1 ]\n                ]\n            ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Layout.SameHeightColumns",
+    "range": {
+      "start": {
+        "row": 71,
+        "column": 5
+      },
+      "end": {
+        "row": 90,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.displayFlex\n    , Css.width <| Css.pct 100\n    , Css.height <| Css.px 400\n    , Css.Global.descendants\n        [ Css.Global.selector \".equal-height\"\n            [ Css.padding <| Css.rem 1\n            , Css.displayFlex\n            , Css.width <| Css.pct 100\n            ]\n        , Css.Global.selector \".equal-height__column\"\n            [ Css.flex <| Css.int 1\n            , Css.margin2 Css.zero (Css.px 8)\n            , Css.padding <| Css.rem 1\n            , Css.border3 (Css.px 1) Css.solid Colors.greyLighter\n            , Css.borderRadius <| Css.px 4\n            ]\n        , Css.Global.selector \".equal-height__column:not(:last-of-type)\"\n            [ Css.marginRight <| Css.rem 1 ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Layout.HolyGrail",
+    "range": {
+      "start": {
+        "row": 86,
+        "column": 5
+      },
+      "end": {
+        "row": 127,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.displayFlex\n    , Css.flexDirection Css.column\n    , Css.width <| Css.pct 100\n    , Css.height <| Css.px 400\n    , Css.Global.descendants\n        [ Css.Global.selector \"> header\"\n            [ Css.displayFlex\n            , Css.alignItems Css.center\n            , Css.padding <| Css.rem 1\n            , Css.borderBottom3 (Css.px 1) Css.solid Colors.greyLighter\n            ]\n        , Css.Global.selector \"main\"\n            [ Css.flexGrow <| Css.int 1\n            , Css.displayFlex\n            , Css.flexDirection Css.row\n            , Css.Global.descendants\n                [ Css.Global.selector \"> div\"\n                    [ Css.marginBottom <| Css.rem 1 ]\n                ]\n            ]\n        , Css.Global.selector \"article\"\n            [ Css.flexGrow <| Css.int 1\n            , Css.padding <| Css.rem 1\n            ]\n        , Css.Global.selector \"aside\"\n            [ Css.width <| Css.pct 25\n            , Css.borderRight3 (Css.px 1) Css.solid Colors.greyLighter\n            , Css.padding <| Css.rem 1\n            ]\n        , Css.Global.selector \"nav\"\n            [ Css.width <| Css.pct 20\n            , Css.borderLeft3 (Css.px 1) Css.solid Colors.greyLighter\n            , Css.padding <| Css.rem 1\n            ]\n        , Css.Global.selector \"> footer\"\n            [ Css.displayFlex\n            , Css.alignItems Css.center\n            , Css.padding <| Css.rem 1\n            , Css.borderTop3 (Css.px 1) Css.solid Colors.greyLighter\n            ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Layout.Card",
+    "range": {
+      "start": {
+        "row": 60,
+        "column": 5
+      },
+      "end": {
+        "row": 75,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.displayFlex\n    , Css.flexWrap Css.wrap\n    , Css.margin2 Css.zero (Css.px -8)\n    , Css.width <| Css.pct 100\n    , Css.paddingTop <| Css.rem 1\n    , Css.Global.descendants\n        [ Css.Global.selector \"> div\"\n            [ Css.flexBasis <| Css.pct 25\n            , Css.padding2 Css.zero (Css.px 8)\n            , Css.marginBottom <| Css.rem 1\n            ]\n        , Css.Global.selector \"> div > div\"\n            [ Css.width <| Css.pct 100\n            ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Input.SearchBox",
+    "range": {
+      "start": {
+        "row": 59,
+        "column": 5
+      },
+      "end": {
+        "row": 82,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.width <| Css.pct 100\n    , Css.height <| Css.px 400\n    , Css.displayFlex\n    , Css.alignItems Css.center\n    , Css.justifyContent Css.center\n    , Css.flexDirection Css.column\n    , Css.Global.descendants\n        [ Css.Global.selector \".search-box\"\n            [ Css.displayFlex\n            , Css.alignItems Css.center\n            , Css.border3 (Css.px 1) Css.solid Colors.grey\n            , Css.padding <| Css.px 8\n            , Css.borderRadius <| Css.px 4\n            , Css.Global.descendants\n                [ Css.Global.selector \".search-box__input\"\n                    [ Css.border <| Css.px 0\n                    , Css.flex <| Css.int 1\n                    , Css.paddingLeft <| Css.rem 0.5\n                    , Css.outline Css.none\n                    ]\n                ]\n            ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Input.Rating",
+    "range": {
+      "start": {
+        "row": 82,
+        "column": 5
+      },
+      "end": {
+        "row": 109,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.width <| Css.pct 100\n    , Css.height <| Css.px 400\n    , Css.displayFlex\n    , Css.alignItems Css.center\n    , Css.justifyContent Css.center\n    , Css.flexDirection Css.column\n    , Css.Global.descendants\n        [ Css.Global.selector \".rating\"\n            [ Css.displayFlex\n            , Css.alignItems Css.center\n            , Css.flexDirection Css.rowReverse\n            ]\n        , Css.Global.selector \".rating__star\"\n            [ Css.backgroundColor Css.transparent\n            , Css.color Colors.grey\n            , Css.fontSize Css.larger\n            , Css.cursor Css.pointer\n            ]\n        , Css.Global.selector \".rating__star:hover\"\n            [ Css.color Colors.blue ]\n        , Css.Global.selector \".rating__star--active\"\n            [ Css.color Colors.blue ]\n        , Css.Global.selector \".rating__star:hover ~ .rating__star\"\n            [ Css.color Colors.blue ]\n        , Css.Global.selector \".rating__star--active ~ .rating__star\"\n            [ Css.color Colors.blue ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Input.RadioButtonGroup",
+    "range": {
+      "start": {
+        "row": 85,
+        "column": 5
+      },
+      "end": {
+        "row": 124,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.width <| Css.pct 100\n    , Css.height <| Css.px 400\n    , Css.displayFlex\n    , Css.alignItems Css.center\n    , Css.justifyContent Css.center\n    , Css.flexDirection Css.column\n    , Css.Global.descendants\n        [ Css.Global.selector \".radio-button-group\"\n            [ Css.displayFlex\n            , Css.border3 (Css.px 1) Css.solid Colors.grey\n            , Css.borderRadius <| Css.px 4\n            ]\n        , Css.Global.selector \".radio-button\"\n            [ Css.displayFlex\n            , Css.flex <| Css.int 1\n            ]\n        , Css.Global.selector \".radio-button__label\"\n            [ Css.displayFlex\n            , Css.alignItems Css.center\n            , Css.justifyContent Css.center\n            , Css.flex <| Css.int 1\n            , Css.padding <| Css.rem 0.8\n            , Css.width <| Css.px 150\n            , Css.cursor Css.pointer\n            , Breakpoints.small\n                [ Css.width <| Css.px 80 ]\n            ]\n        , Css.Global.selector \".radio-button:not(:last-of-type)\"\n            [ Css.borderRight3 (Css.px 1) Css.solid Colors.grey ]\n        , Css.Global.selector \".radio-button__input\"\n            [ Css.display Css.none\n            , Css.checked\n                [ Css.Global.generalSiblings\n                    [ Css.Global.selector \".radio-button__label\"\n                        [ Css.backgroundColor Colors.blue ]\n                    ]\n                ]\n            ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Input.FloatingLabel",
+    "range": {
+      "start": {
+        "row": 57,
+        "column": 5
+      },
+      "end": {
+        "row": 92,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.width <| Css.pct 100\n    , Css.height <| Css.px 400\n    , Css.displayFlex\n    , Css.alignItems Css.center\n    , Css.justifyContent Css.center\n    , Css.flexDirection Css.column\n    , Css.Global.descendants\n        [ Css.Global.selector \".floating-label\"\n            [ Css.position Css.relative\n            , Css.Global.descendants\n                [ Css.Global.selector \".floating-label__input\"\n                    [ Css.padding <| Css.px 8\n                    , Css.borderRadius <| Css.px 4\n                    , Css.border3 (Css.px 1) Css.solid Colors.grey\n                    , Css.outline Css.none\n                    ]\n                , Css.Global.selector \".floating-label__input:not(:placeholder-shown) + label\"\n                    [ Css.backgroundColor Colors.white\n                    , Css.transform <| Css.translate2 Css.zero (Css.pct -50)\n                    , Css.opacity <| Css.num 1\n                    ]\n                , Css.Global.selector \".floating-label__label\"\n                    [ Css.position Css.absolute\n                    , Css.left <| Css.px 8\n                    , Css.top <| Css.px 0\n                    , Css.opacity Css.zero\n                    , Css.pointerEvents Css.none\n                    , Css.Transitions.transition\n                        [ Css.Transitions.opacity 200\n                        , Css.Transitions.transform 200\n                        ]\n                    ]\n                ]\n            ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Input.Dropdown",
+    "range": {
+      "start": {
+        "row": 84,
+        "column": 5
+      },
+      "end": {
+        "row": 127,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.width <| Css.pct 100\n    , Css.height <| Css.px 400\n    , Css.displayFlex\n    , Css.alignItems Css.center\n    , Css.justifyContent Css.center\n    , Css.flexDirection Css.column\n    , Css.Global.descendants\n        [ Css.Global.selector \".dropdown\"\n            [ Css.position Css.relative\n            , Css.marginBottom <| Css.rem 1\n            , Css.hover\n                [ Css.Global.descendants\n                    [ Css.Global.selector \".dropdown__content\"\n                        [ Css.display Css.block ]\n                    ]\n                ]\n            ]\n        , Css.Global.selector \".button\"\n            [ Css.padding <| Css.rem 1\n            , Css.width <| Css.px 200\n            , Css.border3 (Css.px 1) Css.solid Colors.grey\n            , Css.displayFlex\n            , Css.alignItems Css.center\n            , Css.justifyContent Css.spaceBetween\n            , Css.borderRadius <| Css.px 4\n            , Css.cursor Css.pointer\n            ]\n        , Css.Global.selector \".dropdown__content\"\n            [ Css.backgroundColor Colors.white\n            , Css.padding <| Css.rem 1\n            , Css.position Css.absolute\n            , Css.top <| Css.pct 100\n            , Css.right Css.zero\n            , Css.border3 (Css.px 1) Css.solid Colors.grey\n            , Css.borderRadius <| Css.px 4\n            , Css.width <| Css.px 250\n            , Css.marginTop <| Css.px 2\n            , Css.display Css.none\n            , Css.zIndex <| Css.int 9999\n            ]\n        , Css.Global.selector \".other-content\"\n            [ Css.width <| Css.pct 60 ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Input.CustomRadio",
+    "range": {
+      "start": {
+        "row": 83,
+        "column": 5
+      },
+      "end": {
+        "row": 118,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.width <| Css.pct 100\n    , Css.height <| Css.px 400\n    , Css.displayFlex\n    , Css.alignItems Css.center\n    , Css.justifyContent Css.center\n    , Css.flexDirection Css.column\n    , Css.Global.descendants\n        [ Css.Global.selector \".custom-radio\"\n            [ Css.displayFlex\n            , Css.alignItems Css.center\n            , Css.width <| Css.px 200\n            , Css.cursor Css.pointer\n            , Css.marginBottom <| Css.rem 1\n            ]\n        , Css.Global.selector \".custom-radio__input\"\n            [ Css.display Css.none\n            , Css.checked\n                [ Css.Global.generalSiblings\n                    [ Css.Global.selector \".custom-radio__icon > .custom-radio__inner-icon\"\n                        [ Css.backgroundColor Colors.blue ]\n                    ]\n                ]\n            ]\n        , Css.Global.selector \".custom-radio__icon\"\n            [ Css.border3 (Css.px 1) Css.solid Colors.grey\n            , Css.borderRadius <| Css.pct 100\n            , Css.marginRight <| Css.rem 0.4\n            , Css.padding <| Css.px 2\n            ]\n        , Css.Global.selector \".custom-radio__inner-icon\"\n            [ Css.borderRadius <| Css.pct 100\n            , Css.height <| Css.rem 0.8\n            , Css.width <| Css.rem 0.8\n            ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Input.CustomCheckbox",
+    "range": {
+      "start": {
+        "row": 84,
+        "column": 5
+      },
+      "end": {
+        "row": 119,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.width <| Css.pct 100\n    , Css.height <| Css.px 400\n    , Css.displayFlex\n    , Css.alignItems Css.center\n    , Css.justifyContent Css.center\n    , Css.flexDirection Css.column\n    , Css.Global.descendants\n        [ Css.Global.selector \".custom-checkbox\"\n            [ Css.displayFlex\n            , Css.alignItems Css.center\n            , Css.width <| Css.px 200\n            , Css.cursor Css.pointer\n            , Css.marginBottom <| Css.rem 1\n            ]\n        , Css.Global.selector \".custom-checkbox__input\"\n            [ Css.display Css.none\n            , Css.checked\n                [ Css.Global.generalSiblings\n                    [ Css.Global.selector \".custom-checkbox__icon > .custom-checkbox__inner-icon\"\n                        [ Css.backgroundColor Colors.blue ]\n                    ]\n                ]\n            ]\n        , Css.Global.selector \".custom-checkbox__icon\"\n            [ Css.border3 (Css.px 1) Css.solid Colors.grey\n            , Css.borderRadius <| Css.px 4\n            , Css.marginRight <| Css.rem 0.4\n            , Css.padding <| Css.px 2\n            ]\n        , Css.Global.selector \".custom-checkbox__inner-icon\"\n            [ Css.borderRadius <| Css.px 4\n            , Css.height <| Css.rem 0.8\n            , Css.width <| Css.rem 0.8\n            ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Feedback.Tooltip",
+    "range": {
+      "start": {
+        "row": 67,
+        "column": 5
+      },
+      "end": {
+        "row": 121,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.width <| Css.pct 100\n    , Css.height <| Css.px 400\n    , Css.displayFlex\n    , Css.alignItems Css.center\n    , Css.justifyContent Css.center\n    , Css.flexDirection Css.column\n    , Css.Global.descendants\n        [ Css.Global.selector \".tooltip\"\n            [ Css.position Css.relative\n            , Css.hover\n                [ Css.Global.descendants\n                    [ Css.Global.selector \".tooltip__content\"\n                        [ Css.opacity <| Css.num 1\n                        , Css.pointerEventsAll\n                        ]\n                    ]\n                ]\n            ]\n        , Css.Global.selector \".tooltip__content\"\n            [ Css.opacity Css.zero\n            , Css.position Css.absolute\n            , Css.backgroundColor Colors.blackLight\n            , Css.width <| Css.px 200\n            , Css.color Colors.white\n            , Css.bottom <| Css.pct 100\n            , Css.left <| Css.pct 50\n            , Css.transform <| Css.translate2 (Css.pct -50) (Css.px -8)\n            , Css.pointerEvents Css.none\n            , Css.padding <| Css.rem 1\n            , Css.borderRadius <| Css.px 4\n            , Css.Transitions.transition\n                [ Css.Transitions.opacity 200 ]\n            , Css.after\n                [ Css.property \"content\" \"\\\" \\\"\"\n                , Css.position Css.absolute\n                , Css.border3 (Css.px 8) Css.solid Css.transparent\n                , Css.borderTopColor Colors.blackLight\n                , Css.bottom Css.zero\n                , Css.left <| Css.pct 50\n                , Css.transform <| Css.translate2 (Css.pct -50) (Css.px 16)\n                , Css.height Css.zero\n                , Css.width Css.zero\n                , Css.Transitions.transition\n                    [ Css.Transitions.opacity 200 ]\n                ]\n            ]\n        , Css.Global.selector \".tooltip__trigger\"\n            [ Css.backgroundColor Colors.white\n            , Css.padding <| Css.rem 1\n            , Css.width <| Css.px 200\n            , Css.border3 (Css.px 1) Css.solid Colors.grey\n            , Css.borderRadius <| Css.px 4\n            ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Feedback.RadialProgressBar",
+    "range": {
+      "start": {
+        "row": 69,
+        "column": 5
+      },
+      "end": {
+        "row": 120,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.width <| Css.pct 100\n    , Css.height <| Css.px 400\n    , Css.displayFlex\n    , Css.alignItems Css.center\n    , Css.justifyContent Css.center\n    , Css.flexDirection Css.column\n    , Css.Global.descendants\n        [ Css.Global.selector \".progress-bar\"\n            [ Css.position Css.relative\n            , Css.Global.descendants\n                [ Css.Global.selector \".progress-bar__percentage\"\n                    [ Css.displayFlex\n                    , Css.alignItems Css.center\n                    , Css.justifyContent Css.center\n                    , Css.border3 (Css.px 12) Css.solid Colors.greyLighter\n                    , Css.borderRadius <| Css.px 9999\n                    , Css.height <| Css.px 128\n                    , Css.width <| Css.px 128\n                    ]\n                , Css.Global.selector \".progress-bar__inner\"\n                    [ Css.position Css.absolute\n                    , Css.top Css.zero\n                    , Css.left Css.zero\n                    , Css.height <| Css.pct 100\n                    , Css.width <| Css.pct 100\n                    , Css.property \"clip\" \"rect(0px, 128px, 128px, 64px)\"\n                    , Css.Global.withClass \"progress-bar__inner--ge-50\"\n                        [ Css.property \"clip\" \"rect(auto, auto, auto, auto)\" ]\n                    ]\n                , Css.Global.selector \".progress-bar__inner__1\"\n                    [ Css.position Css.absolute\n                    , Css.height <| Css.pct 100\n                    , Css.width <| Css.pct 100\n                    , Css.border3 (Css.px 12) Css.solid Colors.blueLight\n                    , Css.borderRadius <| Css.px 9999\n                    , Css.property \"clip\" \"rect(0px, 64px, 128px, 0px)\"\n                    ]\n                , Css.Global.selector \".progress-bar__inner__2\"\n                    [ Css.position Css.absolute\n                    , Css.height <| Css.pct 100\n                    , Css.width <| Css.pct 100\n                    , Css.border3 (Css.px 12) Css.solid Colors.blueLight\n                    , Css.borderRadius <| Css.px 9999\n                    , Css.property \"clip\" \"rect(0px, 64px, 128px, 0px)\"\n                    , Css.transform <| Css.rotate <| Css.deg 0\n                    , Css.Global.withClass \"progress-bar__inner__2--ge-50\"\n                        [ Css.transform <| Css.rotate <| Css.deg 180 ]\n                    ]\n                ]\n            ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Feedback.ProgressBar",
+    "range": {
+      "start": {
+        "row": 52,
+        "column": 5
+      },
+      "end": {
+        "row": 76,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.width <| Css.pct 100\n    , Css.height <| Css.px 400\n    , Css.displayFlex\n    , Css.alignItems Css.center\n    , Css.justifyContent Css.center\n    , Css.flexDirection Css.column\n    , Css.Global.descendants\n        [ Css.Global.selector \".progress-bar\"\n            [ Css.backgroundColor Colors.greyLighter\n            , Css.borderRadius <| Css.px 9999\n            , Css.width <| Css.pct 80\n            , Css.Global.descendants\n                [ Css.Global.selector \".progress-bar__inner\"\n                    [ Css.displayFlex\n                    , Css.alignItems Css.center\n                    , Css.justifyContent Css.center\n                    , Css.backgroundColor Colors.blueLight\n                    , Css.color Colors.white\n                    , Css.borderRadius <| Css.px 9999\n                    , Css.overflow Css.hidden\n                    ]\n                ]\n            ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Feedback.Loader",
+    "range": {
+      "start": {
+        "row": 77,
+        "column": 18
+      },
+      "end": {
+        "row": 77,
+        "column": 76
+      }
+    },
+    "sourceCode": "[ Css.Animations.transform [ Css.rotate <| Css.deg 360 ] ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Feedback.Loader",
+    "range": {
+      "start": {
+        "row": 76,
+        "column": 16
+      },
+      "end": {
+        "row": 76,
+        "column": 72
+      }
+    },
+    "sourceCode": "[ Css.Animations.transform [ Css.rotate <| Css.deg 0 ] ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  },
+  {
+    "moduleName": "Components.Feedback.Loader",
+    "range": {
+      "start": {
+        "row": 49,
+        "column": 5
+      },
+      "end": {
+        "row": 70,
+        "column": 6
+      }
+    },
+    "sourceCode": "[ Css.width <| Css.pct 100\n    , Css.height <| Css.px 400\n    , Css.displayFlex\n    , Css.alignItems Css.center\n    , Css.justifyContent Css.center\n    , Css.flexDirection Css.column\n    , Css.Global.descendants\n        [ Css.Global.selector \".loader\"\n            [ Css.borderRadius <| Css.pct 50\n            , Css.height <| Css.rem 5\n            , Css.width <| Css.rem 5\n            , Css.position Css.relative\n            , Css.border3 (Css.rem 0.5) Css.solid Colors.greyLighter\n            , Css.borderLeft3 (Css.rem 0.5) Css.solid Colors.grey\n            , Css.transform <| Css.translateZ Css.zero\n            , Css.animationName load\n            , Css.animationDuration <| Css.sec 1.1\n            , Css.property \"animation-timing-function\" \"linear\"\n            , Css.property \"animation-iteration-count\" \"infinite\"\n            ]\n        ]\n    ]",
+    "nonCssRanges": [],
+    "nonCssRelativeRanges": []
+  }
+]
