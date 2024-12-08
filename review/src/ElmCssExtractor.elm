@@ -43,6 +43,8 @@ type alias AccItem =
     , range : Range
     , sourceCode : String
     , nonCssRanges : List Range
+    , simpleRanges : List Range
+    , countTotal : Int
     }
 
 
@@ -60,7 +62,6 @@ fromProjectToModule =
             , sourceCodeExtractor = extract
             , acc = projectContext
             , ignoredRange = Nothing
-            , isCurrentlyIgnored = False
             }
         )
         |> Rule.withModuleNameLookupTable
@@ -90,53 +91,87 @@ type alias ModuleContext =
     , sourceCodeExtractor : Range -> String
     , acc : List AccItem
     , ignoredRange : Maybe Range
-    , isCurrentlyIgnored : Bool
     }
+
+
+{-| Only contains values or functions from `Css` module(s) _or_ literals
+(strings, ints, floats)
+-}
+isSimpleCss : Node Expression -> Bool
+isSimpleCss node =
+    case node of
+        Node _ (Expression.Literal _) ->
+            True
+
+        Node _ (Expression.FunctionOrValue ("Css" :: _) _) ->
+            True
+
+        Node _ (Expression.Application nodes) ->
+            List.all isSimpleCss nodes
+
+        Node _ (Expression.ParenthesizedExpression node_) ->
+            isSimpleCss node_
+
+        Node _ (Expression.ListExpr nodes) ->
+            List.all isSimpleCss nodes
+
+        Node _ (Expression.Integer _) ->
+            True
+
+        Node _ (Expression.Floatable _) ->
+            True
+
+        Node _ (Expression.OperatorApplication _ _ left right) ->
+            List.all isSimpleCss [ left, right ]
+
+        _ ->
+            False
 
 
 expressionEnterVisitor : Node Expression -> ModuleContext -> ( List (Error {}), ModuleContext )
 expressionEnterVisitor node context =
-    if context.isCurrentlyIgnored then
-        ( [], context )
+    case context.ignoredRange of
+        Just _ ->
+            ( [], context )
 
-    else
-        case node of
-            Node range (Expression.ListExpr nodes) ->
-                case List.partition (isFromCssModule context.lookupTable) nodes of
-                    ( [], _ ) ->
-                        ( [], context )
+        _ ->
+            case node of
+                Node range (Expression.ListExpr nodes) ->
+                    case List.partition (isFromCssModule context.lookupTable) nodes of
+                        ( [], _ ) ->
+                            ( [], context )
 
-                    ( _, nonCssNodes ) ->
-                        let
-                            item =
-                                { moduleName = context.moduleName
-                                , range = Node.range node
-                                , sourceCode = context.sourceCodeExtractor (Node.range node)
-                                , nonCssRanges = List.map Node.range nonCssNodes
-                                }
-                        in
-                        ( --[ Rule.errorForModule context.moduleKey { message = "Found Css module", details = [] } (Node.range node) ]
-                          []
-                        , { context
-                            | acc = item :: context.acc
-                            , isCurrentlyIgnored = True
-                            , ignoredRange = Just range
-                          }
-                        )
+                        ( _, nonCssNodes ) ->
+                            let
+                                item =
+                                    { moduleName = context.moduleName
+                                    , range = range
+                                    , sourceCode = context.sourceCodeExtractor range
+                                    , nonCssRanges = List.map Node.range nonCssNodes
+                                    , simpleRanges = nodes |> List.filter isSimpleCss |> List.map Node.range
+                                    , countTotal = List.length nodes
+                                    }
+                            in
+                            ( --[ Rule.errorForModule context.moduleKey { message = "Found Css module", details = [] } (Node.range node) ]
+                              []
+                            , { context
+                                | acc = item :: context.acc
+                                , ignoredRange = Just range
+                              }
+                            )
 
-            _ ->
-                ( [], context )
+                _ ->
+                    ( [], context )
 
 
 expressionExitVisitor : Node Expression -> ModuleContext -> ( List (Error {}), ModuleContext )
 expressionExitVisitor node context =
     case node of
         Node range _ ->
-            if context.isCurrentlyIgnored && context.ignoredRange == Just range then
+            if context.ignoredRange == Just range then
                 ( []
                 , { context
-                    | isCurrentlyIgnored = False
-                    , ignoredRange = Nothing
+                    | ignoredRange = Nothing
                   }
                 )
 
@@ -149,75 +184,67 @@ dataExtractor =
     Json.Encode.list encodeAccItem
 
 
+encodeRange : Range -> Json.Encode.Value
+encodeRange range =
+    Json.Encode.object
+        [ ( "start"
+          , Json.Encode.object
+                [ ( "row", Json.Encode.int range.start.row )
+                , ( "column", Json.Encode.int range.start.column )
+                ]
+          )
+        , ( "end"
+          , Json.Encode.object
+                [ ( "row", Json.Encode.int range.end.row )
+                , ( "column", Json.Encode.int range.end.column )
+                ]
+          )
+        ]
+
+
 encodeAccItem : AccItem -> Json.Encode.Value
 encodeAccItem item =
     Json.Encode.object
         [ ( "moduleName", Json.Encode.string (item.moduleName |> String.join ".") )
         , ( "range"
-          , Json.Encode.object
-                [ ( "start"
-                  , Json.Encode.object
-                        [ ( "row", Json.Encode.int item.range.start.row )
-                        , ( "column", Json.Encode.int item.range.start.column )
-                        ]
-                  )
-                , ( "end"
-                  , Json.Encode.object
-                        [ ( "row", Json.Encode.int item.range.end.row )
-                        , ( "column", Json.Encode.int item.range.end.column )
-                        ]
-                  )
-                ]
+          , encodeRange item.range
           )
         , ( "sourceCode", Json.Encode.string item.sourceCode )
         , ( "nonCssRanges"
-          , Json.Encode.list
-                (\range ->
-                    Json.Encode.object
-                        [ ( "start"
-                          , Json.Encode.object
-                                [ ( "row", Json.Encode.int range.start.row )
-                                , ( "column", Json.Encode.int range.start.column )
-                                ]
-                          )
-                        , ( "end"
-                          , Json.Encode.object
-                                [ ( "row", Json.Encode.int range.end.row )
-                                , ( "column", Json.Encode.int range.end.column )
-                                ]
-                          )
-                        ]
-                )
+          , Json.Encode.list encodeRange
                 item.nonCssRanges
           )
         , ( "nonCssRelativeRanges"
-          , Json.Encode.list
-                (\range_ ->
-                    let
-                        range =
-                            { start = { row = range_.start.row - item.range.start.row, column = range_.start.column }
-                            , end = { row = range_.end.row - item.range.start.row, column = range_.end.column }
-                            }
-                    in
-                    Json.Encode.object
-                        [ ( "start"
-                          , Json.Encode.object
-                                [ ( "row", Json.Encode.int range.start.row )
-                                , ( "column", Json.Encode.int range.start.column )
-                                ]
-                          )
-                        , ( "end"
-                          , Json.Encode.object
-                                [ ( "row", Json.Encode.int range.end.row )
-                                , ( "column"
-                                  , Json.Encode.int range.end.column
-                                  )
-                                ]
-                          )
-                        ]
+          , Json.Encode.list encodeRange
+                (item.nonCssRanges
+                    |> List.map
+                        (\range_ ->
+                            let
+                                range =
+                                    { start = { row = range_.start.row - item.range.start.row, column = range_.start.column }
+                                    , end = { row = range_.end.row - item.range.start.row, column = range_.end.column }
+                                    }
+                            in
+                            range
+                        )
                 )
-                item.nonCssRanges
           )
+        , ( "simpleRelativeRanges"
+          , Json.Encode.list encodeRange
+                (item.simpleRanges
+                    |> List.map
+                        (\range_ ->
+                            let
+                                range =
+                                    { start = { row = range_.start.row - item.range.start.row, column = range_.start.column }
+                                    , end = { row = range_.end.row - item.range.start.row, column = range_.end.column }
+                                    }
+                            in
+                            range
+                        )
+                )
+          )
+        , ( "countTotal", Json.Encode.int item.countTotal )
         ]
 
 
